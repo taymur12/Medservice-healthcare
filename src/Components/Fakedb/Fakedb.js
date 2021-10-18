@@ -1,0 +1,11 @@
+const services = [
+    {names:'X-ray Diagnogstic', imgs:'https://i.ibb.co/CmDgfTV/x-ray-700x700.jpg', description:'Non-medical imaging is the screening of humans for purposes other than medical diagnosis, medical treatment or biomedical research.'},
+    {names:'Pediatrics', imgs:'https://i.ibb.co/M6zHZrM/pediatrics-700x700.jpg', description:'A pediatrician is trained to diagnose and treat a broad range of childhood illnesses, from minor health problems to serious diseases.'},
+    {names:'Pregnancy', imgs:'https://i.ibb.co/bz8Nf9m/pag-700x700.jpg', description:'To do so, place your index and middle fingers on the wrist of your other hand, just below your thumb. You should be able to feel a pulse.'},
+    {names:'Neurology', imgs:'https://i.ibb.co/mCzzxBJ/neurology-700x700.jpg', description:'Neurologists are specialists who treat diseases of the brain and spinal cord, peripheral nerves muscles also include epilepsy, stroke,'},
+    {names:'Mri Diagnogstic', imgs:'https://i.ibb.co/2t1LkhH/mri-700x700.jpg', description:'Magnetic resonance imaging is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body.'},
+    {names:'Laboratory', imgs:'https://i.ibb.co/T4GVwPs/laboratory-700x700.jpg', description:'A laboratory is a facility that provides controlled conditions in which scientific or technological research,experiments, and measurement.'},
+    {names:'Haematology', imgs:'https://i.ibb.co/MssT2n5/hematology-700x700.jpg', description:'Hematology is the branch of medicine concerned with the study of the cause, prognosis, treatment, and prevention of diseases related to blood.'},
+    {names:'Cardiology', imgs:'https://i.ibb.co/ZKdFQPj/cardiology-700x700.jpg', description:'Cardiology is a branch of medicine that deals with the disorders of the heart as well as some parts of the circulatory system.'},
+    {names:'Emergency Help', imgs:'https://i.ibb.co/Dr5kN1w/emergency-help-700x700.jpg', description:'Emergency aid refers to help given to populations affected by unpredictable natural disasters or human conflicts.'}
+]

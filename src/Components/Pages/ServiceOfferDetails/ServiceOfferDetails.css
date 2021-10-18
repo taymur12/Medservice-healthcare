@@ -1,0 +1,12 @@
+.detalisservice{
+ border: 1px solid lightgray;
+ padding: 10px;
+ width: 50%;
+}
+.detailsImg{
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
