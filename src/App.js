@@ -12,6 +12,7 @@ import Register from './Components/Pages/Register/Register';
 import AuthProvider from './ContextProvider/AuthProvider';
 import PrivateRoute from './Components/Pages/Login/PrivateRoute/PrivateRoute';
 import Footer from './Components/Pages/Footer/Footer';
+import Doctor from './Components/Pages/Home/Doctor/Doctor';
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <PrivateRoute path="/bookappointment">
           <BookAppointment></BookAppointment>
+        </PrivateRoute>
+        <PrivateRoute path="/doctor">
+          <Doctor></Doctor>
         </PrivateRoute>
         <Route path="/login">
           <Login></Login>
