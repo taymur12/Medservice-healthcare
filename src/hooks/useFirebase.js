@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import initializeAuthentication from "../Firebase/Firebase.init"
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
 
 initializeAuthentication();
 
@@ -68,8 +68,21 @@ const FirebaseAuth = () =>{
         setPassword(e.target.value)
     }
 
+    //LoginProcess
+    const LoginProcess = e =>{
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+  .then((result) => { 
+    const user = result.user;
+    setUser(user)
+  })
+  .catch((error) => {
+    setError(error.message)
+  });
+    }
 
-    return {user, error, signInwithGoogle, logoutProcess, emailHandle, passwordHandle, registerProcess}
+
+    return {user, error, signInwithGoogle, logoutProcess, emailHandle, passwordHandle, registerProcess, LoginProcess}
 }
 
 export default FirebaseAuth;

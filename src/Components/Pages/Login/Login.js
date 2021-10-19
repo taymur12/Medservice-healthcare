@@ -4,14 +4,15 @@ import useAuth from '../../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const {signInwithGoogle} = useAuth();
+    const {signInwithGoogle, LoginProcess, emailHandle, passwordHandle, error} = useAuth();
     return (
         <div >
             <div className='form mx-auto d-block'>
             <h2>Login </h2>
-            <form >
-                <input className='w-25 p-2 my-3' type="email" name="email" id="" placeholder='Email' /><br />
-                <input className='w-25 p-2 my-3' type="password" name="password" id="" placeholder='Password' /><br />
+            <p className='text-danger'>{error}</p>
+            <form onSubmit={LoginProcess}>
+                <input onBlur={emailHandle} className='w-25 p-2 my-3' type="email" name="email" id="" placeholder='Email' required /><br />
+                <input onBlur={passwordHandle}className='w-25 p-2 my-3' type="password" name="password" id="" placeholder='Password' required /><br />
                 <input className='btn-submit' type="submit" value="submit" />
                 <p>New user? <Link to="/register">Register</Link></p>
             </form>
