@@ -10,6 +10,8 @@ import BookAppointment from './Components/Pages/BookAppointment/BookAppointment'
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
 import AuthProvider from './ContextProvider/AuthProvider';
+import PrivateRoute from './Components/Pages/Login/PrivateRoute/PrivateRoute';
+import Footer from './Components/Pages/Footer/Footer';
 
 
 function App() {
@@ -32,9 +34,9 @@ function App() {
         <Route path="/offerservices/:servicename">
           <ServiceOfferDetails></ServiceOfferDetails>
         </Route>
-        <Route path="/bookappointment">
+        <PrivateRoute path="/bookappointment">
           <BookAppointment></BookAppointment>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login></Login>
         </Route>
@@ -45,6 +47,7 @@ function App() {
           <Page404></Page404>
         </Route>
       </Switch>
+      <Footer></Footer>
       </BrowserRouter>
      </AuthProvider>
     </div>

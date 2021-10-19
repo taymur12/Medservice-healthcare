@@ -1,0 +1,31 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.main-footer{
+    background-color: lightcyan;
+    margin-top: 60px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 580px) {
+    .footer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+    .footer-discription{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .img-footer{
+        width: 90%;
+    }
+    .main-footer{
+    
+        margin-top: 10px;
+    }
+  }

@@ -26,14 +26,17 @@ const Header = () => {
                         <Nav className="mr-auto my-lg-0 ms-lg-auto text-center">
                         <NavLink className='nav-item' activeStyle={navStyle} to="/home">Home</NavLink>
                         <NavLink className='nav-item' activeStyle={navStyle} to="/service">Services</NavLink>
+                        {
+                            user.email && <NavLink className='nav-item' activeStyle={navStyle} to="/doctor">Doctors</NavLink>
+                        }
                         
-                        <NavLink className="nav-item nav-book" to="/bookappointment">Book Appointment</NavLink>
                         {
                             user.email? <button onClick={logoutProcess}>Logout</button> : <NavLink className="nav-item" activeStyle={navStyle} to="/login">Login</NavLink>
                         }
                         {
                             user.email && <span className="text-white ms-2">Hi {user.displayName}</span>
                         }
+                         <NavLink className="nav-item nav-book ms-2" to="/bookappointment">Book Appointment</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
