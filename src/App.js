@@ -7,12 +7,17 @@ import Service from './Components/Pages/Service/Service';
 import Page404 from './Components/Pages/NotFound/Page404';
 import ServiceOfferDetails from './Components/Pages/ServiceOfferDetails/ServiceOfferDetails';
 import BookAppointment from './Components/Pages/BookAppointment/BookAppointment';
+import Login from './Components/Pages/Login/Login';
+import Register from './Components/Pages/Register/Register';
+import AuthProvider from './ContextProvider/AuthProvider';
+
 
 function App() {
   return (
     <div className="App">
       
-      <BrowserRouter>
+     <AuthProvider>
+     <BrowserRouter>
       <Header></Header>
       <Switch>
         <Route exact path="/">
@@ -30,11 +35,18 @@ function App() {
         <Route path="/bookappointment">
           <BookAppointment></BookAppointment>
         </Route>
+        <Route path="/login">
+          <Login></Login>
+        </Route>
+        <Route path="/register">
+          <Register></Register>
+        </Route>
         <Route path="*">
           <Page404></Page404>
         </Route>
       </Switch>
       </BrowserRouter>
+     </AuthProvider>
     </div>
   );
 }

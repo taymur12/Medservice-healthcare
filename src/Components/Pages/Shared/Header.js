@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import headericon from '../../img/icon/logo.png'
 import './Header.css'
+import useAuth from '../../../hooks/useAuth';
+
 const Header = () => {
+
     const navStyle = {
         fontWeight: "bold",
         color: "rgb(240,193,75)",
         borderBottom: '1px solid rgb(240,193,75)'
-
     }
+    const {user, logoutProcess} = useAuth();
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
@@ -23,7 +26,14 @@ const Header = () => {
                         <Nav className="mr-auto my-lg-0 ms-lg-auto text-center">
                         <NavLink className='nav-item' activeStyle={navStyle} to="/home">Home</NavLink>
                         <NavLink className='nav-item' activeStyle={navStyle} to="/service">Services</NavLink>
+                        
                         <NavLink className="nav-item nav-book" to="/bookappointment">Book Appointment</NavLink>
+                        {
+                            user.email? <button onClick={logoutProcess}>Logout</button> : <NavLink className="nav-item" activeStyle={navStyle} to="/login">Login</NavLink>
+                        }
+                        {
+                            user.email && <span className="text-white ms-2">Hi {user.displayName}</span>
+                        }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
