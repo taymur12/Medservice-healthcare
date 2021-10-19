@@ -9,6 +9,7 @@ const FirebaseAuth = () =>{
     const [error , setError] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [isLoading, setisLoading] = useState(true)
     
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider()
@@ -23,6 +24,7 @@ const FirebaseAuth = () =>{
         .catch(error=>{
             setError(error.message)
         })
+        .finally(()=>setisLoading(false))
     }
 
     //Current user sign in
@@ -34,6 +36,7 @@ const FirebaseAuth = () =>{
             else{
                 setUser({})
             }
+            setisLoading(false)
         })
     },[])
 
@@ -42,9 +45,11 @@ const FirebaseAuth = () =>{
         signOut(auth).then(()=>{
             setUser({})
         })
+        
         .catch((error)=>{
             setError(error.message)
         })
+        .finally(()=>setisLoading(false))
     }
 
     //for register
@@ -55,6 +60,7 @@ const FirebaseAuth = () =>{
             const user = result.user
             setUser(user)
         })
+        .then(()=>setisLoading(false))
         .catch(error=>{
             setError(error.message)
         })
@@ -76,13 +82,15 @@ const FirebaseAuth = () =>{
     const user = result.user;
     setUser(user)
   })
+  
   .catch((error) => {
     setError(error.message)
   });
+  
     }
 
 
-    return {user, error, signInwithGoogle, logoutProcess, emailHandle, passwordHandle, registerProcess, LoginProcess}
+    return {user, error, signInwithGoogle, logoutProcess, emailHandle, passwordHandle, registerProcess, LoginProcess, isLoading}
 }
 
 export default FirebaseAuth;

@@ -1,10 +1,14 @@
+import { Spinner } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 
 import {Redirect} from "react-router-dom";
 import useAuth from '../../../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest })=> {
-    let {user} = useAuth();
+    const {user, isLoading} = useAuth();
+    if(isLoading){
+      return <Spinner className='mx-auto d-block my-5' animation="grow" role="status"></Spinner>
+    }
     return (
       <Route
         {...rest}

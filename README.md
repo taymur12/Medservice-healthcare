@@ -1,4 +1,4 @@
-This is the health related website. This website fully dynamic and user friendly as well.</br>
+This is a simple health related website. This website is fully dynamic and user-friendly as well.</br>
 
 What things used in this website are discussed below</br>
 <li>This Website made by html,css, and javascript framework(react)</li>
